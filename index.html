@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Fluxograma - Sistema Construtivo</title>
+
+<style>
+
+body{
+    margin:0;
+    background:#f5f7fa;
+    font-family:Segoe UI,Arial;
+}
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:40px;
+}
+
+h1{
+    text-align:center;
+    color:#0F4C81;
+}
+
+.timeline{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:60px;
+    position:relative;
+
+}
+
+.timeline:before{
+
+    content:'';
+    position:absolute;
+    top:50%;
+    left:5%;
+    width:90%;
+    height:4px;
+    background:#d7d7d7;
+    z-index:0;
+
+}
+
+.step{
+
+    position:relative;
+    z-index:2;
+    width:150px;
+    background:white;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    padding:15px;
+    text-align:center;
+    transition:.3s;
+
+}
+
+.step:hover{
+
+    transform:translateY(-8px);
+    box-shadow:0 15px 30px rgba(0,0,0,.25);
+
+}
+
+.circle{
+
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    background:#0F4C81;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:auto;
+    font-weight:bold;
+
+}
+
+.title{
+
+    margin-top:15px;
+    font-weight:600;
+    color:#0F4C81;
+
+}
+
+.desc{
+
+    font-size:12px;
+    margin-top:8px;
+    color:#666;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Processo de Decisão do Sistema Construtivo</h1>
+
+<div class="timeline">
+
+<div class="step">
+<div class="circle">1</div>
+<div class="title">Levantamento</div>
+<div class="desc">
+Terreno, tipologia, prazo e financiamento.
+</div>
+</div>
+
+<div class="step">
+<div class="circle">2</div>
+<div class="title">Avaliação</div>
+<div class="desc">
+Preenchimento dos 7 critérios.
+</div>
+</div>
+
+<div class="step">
+<div class="circle">3</div>
+<div class="title">Normas</div>
+<div class="desc">
+ABNT e DATec.
+</div>
+</div>
+
+<div class="step">
+<div class="circle">4</div>
+<div class="title">Matriz</div>
+<div class="desc">
+Custo × Prazo × Mão de Obra × Repetição.
+</div>
+</div>
+
+<div class="step">
+<div class="circle">5</div>
+<div class="title">Relatório</div>
+<div class="desc">
+Recomendação Técnica.
+</div>
+</div>
+
+<div class="step">
+<div class="circle">6</div>
+<div class="title">Validação</div>
+<div class="desc">
+Diretoria / Cliente.
+</div>
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
