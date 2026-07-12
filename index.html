@@ -2,99 +2,182 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<title>Fluxograma - Sistema Construtivo</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Fluxograma - Decisão do Sistema Construtivo</title>
 
 <style>
 
-body{
+*{
     margin:0;
-    background:#f5f7fa;
-    font-family:Segoe UI,Arial;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI",sans-serif;
 }
 
-.container{
-    max-width:1100px;
-    margin:auto;
+body{
+    background:#f5f7fa;
     padding:40px;
 }
 
+.container{
+
+    max-width:1600px;
+    margin:auto;
+
+}
+
 h1{
+
     text-align:center;
     color:#0F4C81;
+    margin-bottom:50px;
+
 }
 
-.timeline{
+.flow{
 
     display:flex;
-    justify-content:space-between;
+    flex-direction:column;
     align-items:center;
-    margin-top:60px;
-    position:relative;
+    gap:35px;
 
 }
 
-.timeline:before{
+.card{
 
-    content:'';
-    position:absolute;
-    top:50%;
-    left:5%;
-    width:90%;
-    height:4px;
-    background:#d7d7d7;
-    z-index:0;
-
-}
-
-.step{
-
-    position:relative;
-    z-index:2;
-    width:150px;
     background:white;
     border-radius:12px;
-    box-shadow:0 5px 15px rgba(0,0,0,.1);
-    padding:15px;
+    width:380px;
+    padding:20px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+    border-left:6px solid #0F4C81;
+    transition:.3s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-5px);
+    box-shadow:0 12px 30px rgba(0,0,0,.15);
+
+}
+
+.card h2{
+
+    color:#0F4C81;
+    font-size:20px;
+    margin-bottom:10px;
+
+}
+
+.arrow{
+
+    font-size:38px;
+    color:#0F4C81;
+
+}
+
+.criteria{
+
+    display:grid;
+    grid-template-columns:repeat(4,280px);
+    gap:25px;
+    justify-content:center;
+
+}
+
+.criteria .card{
+
+    width:280px;
+    border-left:6px solid #F37021;
+
+}
+
+.matrix{
+
+    display:grid;
+    grid-template-columns:repeat(2,340px);
+    gap:30px;
+
+}
+
+.final{
+
+    display:grid;
+    grid-template-columns:repeat(3,250px);
+    gap:25px;
+    justify-content:center;
+
+}
+
+.output{
+
+    background:#0F4C81;
+    color:white;
+    border-radius:10px;
+    padding:18px;
     text-align:center;
     transition:.3s;
 
 }
 
-.step:hover{
+.output:hover{
 
-    transform:translateY(-8px);
-    box-shadow:0 15px 30px rgba(0,0,0,.25);
-
-}
-
-.circle{
-
-    width:42px;
-    height:42px;
-    border-radius:50%;
-    background:#0F4C81;
-    color:white;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    margin:auto;
-    font-weight:bold;
+    background:#F37021;
+    cursor:pointer;
 
 }
 
-.title{
+.small{
 
-    margin-top:15px;
-    font-weight:600;
-    color:#0F4C81;
+    font-size:14px;
+    color:#555;
+    margin-top:10px;
 
 }
 
-.desc{
+@media(max-width:1200px){
 
-    font-size:12px;
-    margin-top:8px;
-    color:#666;
+.criteria{
+
+grid-template-columns:repeat(2,280px);
+
+}
+
+.final{
+
+grid-template-columns:repeat(2,250px);
+
+}
+
+}
+
+@media(max-width:700px){
+
+.criteria{
+
+grid-template-columns:1fr;
+
+}
+
+.matrix{
+
+grid-template-columns:1fr;
+
+}
+
+.final{
+
+grid-template-columns:1fr;
+
+}
+
+.card{
+
+width:100%;
+
+}
 
 }
 
@@ -108,54 +191,138 @@ h1{
 
 <h1>Processo de Decisão do Sistema Construtivo</h1>
 
-<div class="timeline">
+<div class="flow">
 
-<div class="step">
-<div class="circle">1</div>
-<div class="title">Levantamento</div>
-<div class="desc">
-Terreno, tipologia, prazo e financiamento.
-</div>
-</div>
+<div class="card">
+<h2>1. Levantamento do Empreendimento</h2>
 
-<div class="step">
-<div class="circle">2</div>
-<div class="title">Avaliação</div>
-<div class="desc">
-Preenchimento dos 7 critérios.
-</div>
+Terreno<br>
+Tipologia<br>
+Prazo contratual<br>
+Financiamento
 </div>
 
-<div class="step">
-<div class="circle">3</div>
-<div class="title">Normas</div>
-<div class="desc">
-ABNT e DATec.
-</div>
+<div class="arrow">↓</div>
+
+<div class="card">
+
+<h2>2. Ficha de Avaliação do Sistema Construtivo</h2>
+
+<div class="small">
+
+• Sistema Candidato 1<br>
+• Sistema Candidato 2<br>
+• Levantamento técnico preliminar
+
 </div>
 
-<div class="step">
-<div class="circle">4</div>
-<div class="title">Matriz</div>
-<div class="desc">
-Custo × Prazo × Mão de Obra × Repetição.
-</div>
 </div>
 
-<div class="step">
-<div class="circle">5</div>
-<div class="title">Relatório</div>
-<div class="desc">
-Recomendação Técnica.
-</div>
+<div class="arrow">↓</div>
+
+<h2 style="color:#0F4C81;">Avaliação dos 7 Critérios</h2>
+
+<div class="criteria">
+
+<div class="card">
+<h2>💲 Custo Total</h2>
+Material + Mão de obra + Custos indiretos
 </div>
 
-<div class="step">
-<div class="circle">6</div>
-<div class="title">Validação</div>
-<div class="desc">
-Diretoria / Cliente.
+<div class="card">
+<h2>📅 Prazo</h2>
+Impacto no cronograma
 </div>
+
+<div class="card">
+<h2>👷 Mão de Obra</h2>
+Disponibilidade regional
+</div>
+
+<div class="card">
+<h2>🏢 Tipologia</h2>
+Compatibilidade do empreendimento
+</div>
+
+<div class="card">
+<h2>🌎 Terreno</h2>
+Terreno e fundações
+</div>
+
+<div class="card">
+<h2>🌱 Sustentabilidade</h2>
+Certificações ambientais
+</div>
+
+<div class="card">
+<h2>🏘 Escala</h2>
+Repetição das unidades
+
+</div>
+
+</div>
+
+<div class="arrow">↓</div>
+
+<div class="matrix">
+
+<div class="card">
+
+<h2>Verificação Normativa</h2>
+
+✔ ABNT<br>
+✔ DATec (quando aplicável)
+
+</div>
+
+<div class="card">
+
+<h2>Matriz Comparativa</h2>
+
+Custo × Prazo × Mão de Obra × Repetição
+
+</div>
+
+</div>
+
+<div class="arrow">↓</div>
+
+<div class="card">
+
+<h2>Relatório de Recomendação Técnica</h2>
+
+Sistema recomendado com justificativa técnica.
+
+</div>
+
+<div class="arrow">↓</div>
+
+<div class="card">
+
+<h2>Validação</h2>
+
+Diretoria / Cliente
+
+</div>
+
+<div class="arrow">↓</div>
+
+<h2 style="color:#0F4C81;">Sistemas Construtivos Recomendados</h2>
+
+<div class="final">
+
+<div class="output">Alvenaria Convencional</div>
+
+<div class="output">Alvenaria Estrutural</div>
+
+<div class="output">Parede de Concreto</div>
+
+<div class="output">Light Steel Frame</div>
+
+<div class="output">Wood Frame</div>
+
+<div class="output">Pré-moldado</div>
+
 </div>
 
 </div>
